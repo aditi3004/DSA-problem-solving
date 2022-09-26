@@ -1,0 +1,20 @@
+smallest code:
+class Solution {
+    public boolean rotateString(String s, String goal) {
+    return (s.length() == goal.length())
+            && ((s+s).indexOf(goal) != -1);
+    }
+}
+
+
+
+
+Naive Approach: Follow the given steps to solve the problem
+
+Find all the positions of the first character of the original string in the string to be checked.
+For every position found, consider it to be the starting index of the string to be checked.
+Beginning from the new starting index, compare both strings and check whether they are equal or not.
+(Suppose the original string to is s1, string to be checked to be s2,n is the length of strings and j is the position of the
+first character of s1 in s2, then for i < (length of original string) , check if s1[i]==s2[(j+1)%n). Return false if any character
+mismatch is found, else return true.
+Repeat 3rd step for all positions found.
